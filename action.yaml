@@ -13,10 +13,6 @@ inputs:
   value:
     description: The property value to be written
     required: true
-  create:
-    description: When set, the properties file will be created, if it doesn't exist yet
-    required: false
-    default: 'false'
 runs:
   using: 'docker'
   image: 'dschanoeh/props:0.1.0'
@@ -26,4 +22,4 @@ runs:
     - "${{ inputs.value }}"
     - --file
     - "${{ inputs.file }}"
-    - ${{ inputs.create == 'true' && '--create' || '' }}
+    - --create

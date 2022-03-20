@@ -9,6 +9,7 @@ This is a GitHub Action to change a single property in a [Java .properties files
 
 ### `file` (required)
 The path of the properties file to be modified.
+If it doesn't exist, the file will be created.
 
 ### `property` (required)
 The property key to be modified. If the property doesn't exist,
@@ -17,9 +18,6 @@ replaced in-line.
 
 ### `value` (required)
 The value to be written.
-
-### `create` (optional)
-When set to `'true'`, the file will be created if it doesn't exist.
 
 ## Usage
 

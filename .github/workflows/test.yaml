@@ -94,7 +94,6 @@ jobs:
           file: .tmp/test.properties
           property: foo
           value: test
-          create: true
       - name: Read value back
         id: read-back
         uses: christian-draeger/read-properties@1.0.1
