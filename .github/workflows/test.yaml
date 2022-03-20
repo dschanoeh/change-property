@@ -22,9 +22,9 @@ jobs:
           value: test
       - name: Read value back
         id: read-back
-        uses: christian-draeger/read-properties@1.0.1
+        uses: dschanoeh/get-property@v1
         with:
-          path: .tmp/test.properties
+          file: .tmp/test.properties
           property: foo
       - name: Verify correct value
         if: steps.read-back.outputs.value != 'test'
@@ -47,9 +47,9 @@ jobs:
           value: test
       - name: Read value back
         id: read-back
-        uses: christian-draeger/read-properties@1.0.1
+        uses: dschanoeh/get-property@v1
         with:
-          path: .tmp/test.properties
+          file: .tmp/test.properties
           property: bar
       - name: Verify correct value
         if: steps.read-back.outputs.value != 'test'
@@ -72,9 +72,9 @@ jobs:
           value: test
       - name: Read value back
         id: read-back
-        uses: christian-draeger/read-properties@1.0.1
+        uses: dschanoeh/get-property@v1
         with:
-          path: .tmp/test.properties
+          file: .tmp/test.properties
           property: foo
       - name: Verify correct value
         if: steps.read-back.outputs.value != 'test'
@@ -96,9 +96,9 @@ jobs:
           value: test
       - name: Read value back
         id: read-back
-        uses: christian-draeger/read-properties@1.0.1
+        uses: dschanoeh/get-property@v1
         with:
-          path: .tmp/test.properties
+          file: .tmp/test.properties
           property: foo
       - name: Verify correct value
         if: steps.read-back.outputs.value != 'test'
