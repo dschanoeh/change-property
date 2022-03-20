@@ -1,0 +1,24 @@
+name: Change Property
+description: Changes a single property in a Java .properties file
+branding:
+  icon: 'edit'
+  color: 'yellow'
+inputs:
+  file:
+    description: The path to the properties file.
+    required: true
+  property:
+    description: 'The property key to be used'
+    required: true
+  value:
+    description: 'The property value to be written'
+    required: true
+runs:
+  using: 'docker'
+  image: 'dschanoeh/props:0.1.0'
+  args:
+    - write
+    - "${{ inputs.property }}"
+    - "${{ inputs.value }}"
+    - --file
+    - "${{ inputs.file }}"

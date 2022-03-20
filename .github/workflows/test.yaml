@@ -1,0 +1,55 @@
+name: Test action using test data
+
+on: [push]
+
+jobs:
+  test-modify-property:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v3
+      - name: Get test file
+        run: |
+          mkdir .tmp
+          cp test-data/basic.properties .tmp/test.properties
+      - name: Change property
+        uses: ./
+        with:
+          file: .tmp/test.properties
+          property: foo
+          value: test
+      - name: Read value back
+        id: read-back
+        uses: christian-draeger/read-properties@1.0.1
+        with:
+          path: .tmp/test.properties
+          property: foo
+      - name: Verify correct value
+        if: steps.read-back.outputs.value != 'test'
+        run: |
+          exit 1
+  test-add-property:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v3
+      - name: Get test file
+        run: |
+          mkdir .tmp
+          cp test-data/basic.properties .tmp/test.properties
+      - name: Change property
+        uses: ./
+        with:
+          file: .tmp/test.properties
+          property: bar
+          value: test
+      - name: Read value back
+        id: read-back
+        uses: christian-draeger/read-properties@1.0.1
+        with:
+          path: .tmp/test.properties
+          property: bar
+      - name: Verify correct value
+        if: steps.read-back.outputs.value != 'test'
+        run: |
+          exit 1
