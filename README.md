@@ -23,7 +23,7 @@ The value to be written.
 
 ```
 - name: Change property
-  uses: dschanoeh/change-property@1.0.0
+  uses: dschanoeh/change-property@v1.0.0
   with:
     file: my.properties
     property: foo
