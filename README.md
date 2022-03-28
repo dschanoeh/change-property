@@ -4,6 +4,8 @@
 
 This is a GitHub Action to change a single property in a [Java .properties files](https://en.wikipedia.org/wiki/.properties).
 
+A matching action to get the value of a property can be found [here](https://github.com/dschanoeh/ger-property).
+
 
 ## Inputs
 
@@ -23,7 +25,7 @@ The value to be written.
 
 ```
 - name: Change property
-  uses: dschanoeh/change-property@v1.0.0
+  uses: dschanoeh/change-property@v1
   with:
     file: my.properties
     property: foo
