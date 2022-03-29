@@ -15,7 +15,7 @@ inputs:
     required: true
 runs:
   using: 'docker'
-  image: 'dschanoeh/props:0.1.0'
+  image: 'dschanoeh/props:1.0.0'
   args:
     - write
     - "${{ inputs.property }}"
